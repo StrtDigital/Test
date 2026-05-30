@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* 1. Dynamic Theme Accent Switcher with Persistence */
 function initAccentSwitcher() {
     const dots = document.querySelectorAll('.accent-dot');
-    const savedAccent = localStorage.getItem('vance-accent') || 'cyan';
+    const savedAccent = localStorage.getItem('vance-accent') || 'amber';
     
     // Apply saved accent on load
     applyAccent(savedAccent);
