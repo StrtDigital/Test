@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop — VEYRA</title>
+  <meta name="description" content="Browse the full VEYRA collection. Filter by category, colour, size and price. Free shipping over $150.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314110f'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='16' fill='%23f7f4ef' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span id="crumb">Shop</span>
+    </nav>
+    <header class="page-head">
+      <h1 id="catalog-title">All Products</h1>
+      <p class="muted" id="catalog-sub">Considered pieces for every day.</p>
+    </header>
+
+    <div class="catalog">
+      <!-- FILTERS -->
+      <aside class="filters" id="filters" aria-label="Product filters">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong style="letter-spacing:.05em">Filters</strong>
+          <button class="link-underline" id="clear-filters" type="button">Clear all</button>
+        </div>
+
+        <details class="filter-group" open>
+          <summary>Category</summary>
+          <ul id="filter-category"></ul>
+        </details>
+
+        <details class="filter-group" open>
+          <summary>Type</summary>
+          <ul id="filter-sub"></ul>
+        </details>
+
+        <details class="filter-group" open>
+          <summary>Colour</summary>
+          <ul id="filter-color" style="display:flex;flex-wrap:wrap;gap:.6rem"></ul>
+        </details>
+
+        <details class="filter-group" open>
+          <summary>Size</summary>
+          <ul id="filter-size" style="display:flex;flex-wrap:wrap;gap:.5rem"></ul>
+        </details>
+
+        <details class="filter-group" open>
+          <summary>Price</summary>
+          <ul>
+            <li class="filter-option"><input type="radio" name="price" value="" id="p-any" checked><label for="p-any">Any price</label></li>
+            <li class="filter-option"><input type="radio" name="price" value="0-75" id="p1"><label for="p1">Under $75</label></li>
+            <li class="filter-option"><input type="radio" name="price" value="75-150" id="p2"><label for="p2">$75 – $150</label></li>
+            <li class="filter-option"><input type="radio" name="price" value="150-250" id="p3"><label for="p3">$150 – $250</label></li>
+            <li class="filter-option"><input type="radio" name="price" value="250-9999" id="p4"><label for="p4">$250+</label></li>
+          </ul>
+        </details>
+
+        <label class="filter-option"><input type="checkbox" id="filter-onsale"><span>On sale only</span></label>
+      </aside>
+
+      <!-- RESULTS -->
+      <section>
+        <div class="catalog-toolbar">
+          <div class="cluster">
+            <button class="btn btn--ghost btn--sm filter-toggle" id="open-filters" type="button">Filters</button>
+            <span class="muted" id="result-count"></span>
+          </div>
+          <label class="field" style="grid-auto-flow:column;align-items:center;gap:.6rem">
+            <span style="font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-soft)">Sort</span>
+            <select class="select" id="sort" style="width:auto">
+              <option value="featured">Featured</option>
+              <option value="new">Newest</option>
+              <option value="popular">Most popular</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="active-filters" id="active-filters"></div>
+
+        <div class="product-grid" id="results" style="margin-top:1.2rem"></div>
+        <div id="empty" class="empty-state" hidden>
+          <h3 style="font-family:var(--font-display);font-size:1.6rem">No matches found</h3>
+          <p>Try removing a filter or searching for something else.</p>
+          <button class="btn btn--ghost btn--sm" id="empty-clear" style="margin-top:1rem">Clear filters</button>
+        </div>
+
+        <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>

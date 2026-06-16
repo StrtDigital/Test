@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — VEYRA</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314110f'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='16' fill='%23f7f4ef' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="container section">
+    <div id="checkout-root">
+      <header class="page-head"><h1>Checkout</h1></header>
+      <div class="steps">
+        <div class="step done">Bag</div>
+        <div class="step active">Details</div>
+        <div class="step">Payment</div>
+        <div class="step">Confirmation</div>
+      </div>
+
+      <form id="checkout-form" class="checkout-layout" novalidate>
+        <div>
+          <!-- Contact -->
+          <section class="checkout-section">
+            <h2 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem">Contact</h2>
+            <div class="form-grid">
+              <div class="field col-span"><label for="email">Email</label><input class="input" id="email" type="email" required autocomplete="email"><span class="field-error"></span></div>
+            </div>
+            <label class="checkbox" style="margin-top:.5rem"><input type="checkbox" checked> Email me with news and offers</label>
+          </section>
+
+          <!-- Shipping -->
+          <section class="checkout-section">
+            <h2 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem">Shipping address</h2>
+            <div class="form-grid">
+              <div class="field"><label for="fname">First name</label><input class="input" id="fname" required autocomplete="given-name"><span class="field-error"></span></div>
+              <div class="field"><label for="lname">Last name</label><input class="input" id="lname" required autocomplete="family-name"><span class="field-error"></span></div>
+              <div class="field col-span"><label for="addr">Address</label><input class="input" id="addr" required autocomplete="street-address"><span class="field-error"></span></div>
+              <div class="field"><label for="city">City</label><input class="input" id="city" required autocomplete="address-level2"><span class="field-error"></span></div>
+              <div class="field"><label for="zip">Postal code</label><input class="input" id="zip" required autocomplete="postal-code"><span class="field-error"></span></div>
+              <div class="field col-span"><label for="country">Country</label>
+                <select class="select" id="country"><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option></select></div>
+            </div>
+          </section>
+
+          <!-- Delivery -->
+          <section class="checkout-section">
+            <h2 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem">Delivery method</h2>
+            <label class="pay-method" style="margin-bottom:.6rem"><input type="radio" name="ship" value="standard" checked><div><strong>Standard</strong><br><span class="muted" style="font-size:.82rem">2–4 business days · Free over $150</span></div></label>
+            <label class="pay-method"><input type="radio" name="ship" value="express"><div><strong>Express · $18</strong><br><span class="muted" style="font-size:.82rem">1–2 business days</span></div></label>
+          </section>
+
+          <!-- Payment -->
+          <section class="checkout-section">
+            <h2 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:1rem">Payment</h2>
+            <div style="display:flex;gap:.6rem;margin-bottom:1rem">
+              <label class="pay-method" style="flex:1"><input type="radio" name="pay" value="card" checked> Card</label>
+              <label class="pay-method" style="flex:1"><input type="radio" name="pay" value="paypal"> PayPal</label>
+            </div>
+            <div id="card-fields" class="form-grid">
+              <div class="field col-span"><label for="card">Card number</label><input class="input" id="card" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="cc-number"><span class="field-error"></span></div>
+              <div class="field"><label for="exp">Expiry</label><input class="input" id="exp" placeholder="MM / YY" autocomplete="cc-exp"><span class="field-error"></span></div>
+              <div class="field"><label for="cvc">CVC</label><input class="input" id="cvc" inputmode="numeric" placeholder="123" autocomplete="cc-csc"><span class="field-error"></span></div>
+            </div>
+            <p class="muted" style="font-size:.78rem;margin-top:.8rem">🔒 This is a demo store — no real payment is processed.</p>
+          </section>
+
+          <button class="btn btn--accent btn--lg btn--block" type="submit" id="place-order">Place order</button>
+        </div>
+
+        <aside class="summary" id="checkout-summary"></aside>
+      </form>
+    </div>
+
+    <!-- Success (shown after order) -->
+    <div id="order-success" class="order-success" hidden>
+      <div class="check" id="success-check"></div>
+      <span class="eyebrow">Order confirmed</span>
+      <h1 style="font-size:var(--fs-2xl);margin-block:.5rem 1rem">Thank you for your order</h1>
+      <p class="muted">A confirmation has been sent to <strong id="success-email"></strong>. Your order number is <strong id="order-num"></strong>.</p>
+      <div class="cluster" style="justify-content:center;margin-top:1.6rem">
+        <a class="btn btn--accent" href="shop.html">Continue shopping</a>
+        <a class="btn btn--ghost" href="account.html">View orders</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>

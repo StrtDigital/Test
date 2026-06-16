@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product — VEYRA</title>
+  <meta name="description" content="Product details, sizing, colours and reviews.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314110f'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='16' fill='%23f7f4ef' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="container">
+    <nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb"></nav>
+
+    <div class="pdp" id="pdp"><!-- injected --></div>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews-section">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Reviews</span>
+          <h2 id="reviews-title">What customers say</h2>
+        </div>
+      </div>
+      <div class="rating-summary" id="rating-summary"></div>
+      <div class="reviews" id="reviews-list" style="margin-top:1.5rem"></div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section">
+      <div class="section-head"><h2>You may also like</h2></div>
+      <div class="product-grid" id="related"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
+</html>

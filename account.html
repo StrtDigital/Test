@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Account — VEYRA</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314110f'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='16' fill='%23f7f4ef' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="container section">
+    <!-- Signed-out state -->
+    <div id="signed-out" class="empty-state" hidden>
+      <h1 style="font-family:var(--font-display);font-size:1.9rem">Your account</h1>
+      <p>Sign in to view orders, addresses and saved items.</p>
+      <div class="cluster" style="justify-content:center;margin-top:1.2rem">
+        <a class="btn btn--accent" href="login.html">Sign in</a>
+        <a class="btn btn--ghost" href="register.html">Create account</a>
+      </div>
+    </div>
+
+    <!-- Signed-in state -->
+    <div id="signed-in" hidden>
+      <header class="page-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+        <div><span class="eyebrow">My account</span><h1 id="greeting">Hello</h1></div>
+        <button class="btn btn--ghost btn--sm" id="signout">Sign out</button>
+      </header>
+
+      <div class="account-layout">
+        <nav class="account-nav" id="account-nav" aria-label="Account sections">
+          <button data-tab="overview" class="active">Overview</button>
+          <button data-tab="orders">Orders</button>
+          <button data-tab="addresses">Addresses</button>
+          <button data-tab="wishlist">Wishlist</button>
+          <button data-tab="settings">Settings</button>
+        </nav>
+
+        <div>
+          <section class="account-panel active" data-panel="overview">
+            <div class="split">
+              <div class="feature-tile"><span class="eyebrow">Recent order</span><div id="recent-order" style="margin-top:.6rem"></div></div>
+              <div class="feature-tile"><span class="eyebrow">Wishlist</span><p id="wish-snapshot" style="margin-top:.6rem"></p><a class="link-underline" href="wishlist.html">View wishlist →</a></div>
+            </div>
+            <div class="feature-tile" style="margin-top:1rem"><span class="eyebrow">Store credit</span><p style="font-family:var(--font-display);font-size:2rem;margin-top:.4rem">$0.00</p><p class="muted" style="font-size:.85rem">Refer a friend to earn $15 credit.</p></div>
+          </section>
+
+          <section class="account-panel" data-panel="orders">
+            <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:1rem">Order history</h2>
+            <div id="orders-list"></div>
+          </section>
+
+          <section class="account-panel" data-panel="addresses">
+            <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:1rem">Saved addresses</h2>
+            <div class="split" id="addresses"></div>
+            <button class="btn btn--ghost btn--sm" style="margin-top:1rem" id="add-address">+ Add address</button>
+          </section>
+
+          <section class="account-panel" data-panel="wishlist">
+            <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:1rem">Saved items</h2>
+            <div class="product-grid" id="account-wishlist"></div>
+            <p id="account-wishlist-empty" class="muted" hidden>No saved items yet. <a class="link-underline" href="shop.html">Browse the collection →</a></p>
+          </section>
+
+          <section class="account-panel" data-panel="settings">
+            <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:1rem">Account settings</h2>
+            <form class="flow" id="settings-form" style="max-width:480px" novalidate>
+              <div class="field"><label for="s-name">Full name</label><input class="input" id="s-name"></div>
+              <div class="field"><label for="s-email">Email</label><input class="input" id="s-email" type="email"></div>
+              <label class="checkbox"><input type="checkbox" checked> Subscribe to the VEYRA newsletter</label>
+              <button class="btn btn--accent" type="submit">Save changes</button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/account.js"></script>
+</body>
+</html>

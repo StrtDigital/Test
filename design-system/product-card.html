@@ -1,0 +1,29 @@
+<!-- @dsCard group="Patterns" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VEYRA — Product Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>body{padding:2.5rem}</style></head>
+<body>
+  <span class="eyebrow">Patterns</span>
+  <h1 style="font-size:2rem">Product card</h1>
+  <p class="muted">Hover reveals the wishlist toggle and quick-add. Used across catalogue, home and wishlist.</p>
+  <div class="product-grid" style="max-width:760px;margin-top:1.5rem">
+    <article class="card">
+      <div class="card__media">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d77b5f"/><stop offset="1" stop-color="#8f3f29"/></linearGradient></defs><rect width="300" height="400" fill="url(#g1)"/><g transform="translate(0,40)" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-linejoin="round"><path d="M80 55 110 40 H190 L220 55 205 120 185 110 V255 H115 V110 L95 120Z"/></g><text x="150" y="372" text-anchor="middle" fill="rgba(255,255,255,.82)" font-family="Inter" font-size="13" letter-spacing="3">VEYRA</text></svg>
+        <div class="card__badges"><span class="badge badge--new">New</span></div>
+        <button class="card__wish is-active" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-9.5-9C1 8 2.5 4.5 6 4.5c2 0 3.2 1.2 4 2.3.8-1.1 2-2.3 4-2.3 3.5 0 5 3.5 3.5 6.5C19 15.5 12 20 12 20z"/></svg></button>
+        <div class="card__quick" style="opacity:1;transform:none"><button class="btn btn--light btn--block btn--sm">Quick add</button></div>
+      </div>
+      <div class="card__body">
+        <span class="card__cat">Outerwear</span>
+        <h3 class="card__title">Meridian Wool Coat</h3>
+        <span class="card__price"><span class="sale">$229.00</span><span class="was">$289.00</span></span>
+        <div class="swatches"><span class="swatch" style="background:#a9794d"></span><span class="swatch" style="background:#1c1a18"></span><span class="swatch" style="background:#34433a"></span></div>
+        <div class="stars" style="margin-top:.15rem">★★★★★ <span class="muted" style="font-size:.72rem">(86)</span></div>
+      </div>
+    </article>
+  </div>
+</body></html>

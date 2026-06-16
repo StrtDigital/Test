@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VEYRA — Forms</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>body{padding:2.5rem;max-width:560px}.flow>*+*{margin-top:1rem}</style></head>
+<body>
+  <span class="eyebrow">Components</span>
+  <h1 style="font-size:2rem">Form controls</h1>
+  <div class="flow" style="margin-top:1.2rem">
+    <div class="field"><label for="a">Email</label><input class="input" id="a" placeholder="you@example.com"></div>
+    <div class="field"><label for="b">Country</label><select class="select" id="b"><option>United States</option><option>United Kingdom</option></select></div>
+    <div class="field"><label for="c">Invalid example</label><input class="input input--invalid" id="c" value="not-an-email"><span class="field-error">Enter a valid email</span></div>
+    <div class="field"><label for="d">Message</label><textarea class="textarea" id="d" placeholder="How can we help?"></textarea></div>
+    <label class="checkbox"><input type="checkbox" checked> Email me with news and offers</label>
+    <div class="qty"><button>−</button><input value="1" style="width:44px;text-align:center;border:none;background:none"><button>+</button></div>
+  </div>
+</body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — VEYRA</title>
+  <meta name="description" content="Get in touch with VEYRA. Customer care, shipping & returns, FAQ and size guide.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314110f'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='16' fill='%23f7f4ef' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main" class="container section">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></nav>
+    <header class="page-head"><span class="eyebrow">We're here to help</span><h1>Get in touch</h1><p class="muted">Our customer care team replies within one business day.</p></header>
+
+    <div class="contact-layout">
+      <div class="contact-info" id="contact-info"></div>
+
+      <form id="contact-form" class="flow" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="name">Name</label><input class="input" id="name" required><span class="field-error"></span></div>
+          <div class="field"><label for="email">Email</label><input class="input" id="email" type="email" required><span class="field-error"></span></div>
+        </div>
+        <div class="field"><label for="subject">Subject</label>
+          <select class="select" id="subject"><option>Order enquiry</option><option>Returns & exchanges</option><option>Product question</option><option>Partnerships</option><option>Other</option></select></div>
+        <div class="field"><label for="message">Message</label><textarea class="textarea" id="message" required></textarea><span class="field-error"></span></div>
+        <button class="btn btn--accent btn--lg" type="submit">Send message</button>
+        <p class="form-msg" role="status" style="color:var(--ok);min-height:1.2em"></p>
+      </form>
+    </div>
+
+    <div class="map-embed" style="margin-top:2.5rem">VEYRA Flagship · 14 Studio Lane, Brooklyn NY</div>
+
+    <!-- Shipping & Returns -->
+    <section class="section" id="shipping">
+      <div class="section-head"><h2>Shipping & Returns</h2></div>
+      <div class="split">
+        <div class="feature-tile"><h3 style="font-size:1.2rem;margin-bottom:.5rem">Shipping</h3><p class="muted">Complimentary standard shipping on orders over $150. Standard delivery 2–4 business days; express 1–2 business days for $18. We ship worldwide.</p></div>
+        <div class="feature-tile"><h3 style="font-size:1.2rem;margin-bottom:.5rem">Returns</h3><p class="muted">Free returns within 30 days on unworn items with tags attached. Refunds are processed to the original payment method within 5–7 business days.</p></div>
+      </div>
+    </section>
+
+    <!-- Size guide -->
+    <section class="section section--tight" id="size">
+      <div class="section-head"><h2>Size guide</h2></div>
+      <div style="overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg)">
+        <table style="width:100%;border-collapse:collapse;min-width:480px">
+          <thead><tr style="background:var(--paper-2);text-align:left">
+            <th style="padding:.9rem 1.1rem">Size</th><th style="padding:.9rem 1.1rem">Chest (in)</th><th style="padding:.9rem 1.1rem">Waist (in)</th><th style="padding:.9rem 1.1rem">EU</th></tr></thead>
+          <tbody id="size-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--tight" id="faq">
+      <div class="section-head"><h2>FAQ</h2></div>
+      <div class="accordion" id="faq-list" style="max-width:760px"></div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>
